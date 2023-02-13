@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style>
+    .data {
+       margin-left: 700px;
+       margin-top: 100px;
+    }
+    .Header {
+        background-color: greenyellow;
+        height: 70px;
+    }
+
+    .HeaderText {
+        font-size: 30px;
+        padding-top: 10px;
+        margin-left: 735px;
+    }
+    .buttonstyle{
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 645px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid Header d-flex justify-content">
+        <h1 class="HeaderText">Result Management System</h1>
+        <a href="/" class="btn btn-warning buttonstyle">Logout</a>
+    </div>
+    <a href="/StudentloginForm" style = "font-size: 30px;">Back</a>
+    <div class = "data">
+        <h1 class="ml-5 pl-5 mb-5">Result</h1>
+    <div class="form-group row" name="theform">
+      <label for="Roll No" class="col-sm-2 col-form-label">Roll No</label>
+      <div class="col-sm-10">
+          <h1><%= AllRecords.RollNo %></h1>
+        <!-- <input type="text" class="form-control" id="RollNo" placeholder="Roll No" name="RollNo" value =  '<%= AllRecords.RollNo %>' onKeyup="checkform()"> -->
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Name" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <!-- <input type="Name" class="form-control" id="Name" placeholder="Name" name="Name" value =  '<%= AllRecords.Name %>' onKeyup="checkform()"> -->
+        <h1><%= AllRecords.Name %></h1>
+      </div>
+       </div>
+    <div class="form-group row">
+        <label for="Name" class="col-sm-2 col-form-label">Date Of Birth</label>
+        <div class="col-sm-10">
+          <!-- <input type="date" class="form-control" id="Date Of Birth" placeholder="Date Of Birth" name="DateOfBirth" value =  '<%= AllRecords.DateOfBirth %>' onKeyup="checkform()"> -->
+          <h1><%= AllRecords.DateOfBirth %></h1>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Name" class="col-sm-2 col-form-label">Score</label>
+        <div class="col-sm-10">
+          <!-- <input type="Name" class="form-control" id="Score" placeholder="Score" name="Score" value =  '<%= AllRecords.Score %>' onKeyup="checkform()"> -->
+          <h1><%= AllRecords.Score %></h1>
+        </div>
+      </div>
+   </div>
+</body>
+</html>

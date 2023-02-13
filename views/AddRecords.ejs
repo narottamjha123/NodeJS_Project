@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+  <form action="/AddNewRecords" method="POST"  class="mt-5">
+    <div class="form-group row" name="theform">
+      <label for="Roll No" class="col-sm-2 col-form-label">Roll No</label>
+      <div class="col-sm-10">
+       <input type="text" class="form-control" id="RollNo" placeholder="Roll No" name="RollNo" value =  '<%= AllRecords.RollNo %>' onKeyup="checkform()">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Name" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input type="Name" class="form-control" id="Name" placeholder="Name" name="Name" value =  '<%= AllRecords.Name %>' onKeyup="checkform()">
+      </div>
+       </div>
+    <div class="form-group row">
+        <label for="Name" class="col-sm-2 col-form-label">Date Of Birth</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="Date Of Birth" placeholder="Date Of Birth" name="DateOfBirth" value =  '<%= AllRecords.DateOfBirth %>' onKeyup="checkform()">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Name" class="col-sm-2 col-form-label">Score</label>
+        <div class="col-sm-10">
+          <input type="Name" class="form-control" id="Score" placeholder="Score" name="Score" value =  '<%= AllRecords.Score %>' onKeyup="checkform()">
+        </div>
+      </div>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-success" id="submitbutton" disabled="disabled" onsubmit="Submit()">submit</button>
+      <a href="/AddNewRecords" class="btn btn-secondary" >Clear</a>
+    </div>
+  </form>
+</body>
+
+<script type="text/javascript" language="javascript">
+    // '<%= AllRecords.RollNo %>' != '' ?  (document.getElementById('RollNo').innerText =   '<%= AllRecords.RollNo %>' , ) : "";
+    function checkform() {
+      var Roll = document.getElementById("RollNo");
+      var Name = document.getElementById("Name");
+      var DateOfBirth = document.getElementById('Date Of Birth');
+      var Score = document.getElementById('Score');
+      var cansubmit = true;
+      let data = [];
+      if(Roll.value)
+      (Roll && Roll.value.length != '') && (Name && Name.value != '') && (DateOfBirth && DateOfBirth.value != '') && (Score && Score.value != '') && (data && data.length == 0) ? (cansubmit = true) : (cansubmit = false);
+      if (cansubmit) {
+        document.getElementById('submitbutton').disabled = false;
+      } else {
+        document.getElementById('submitbutton').disabled = true;
+      }
+    }
+  </script>
+</html>
